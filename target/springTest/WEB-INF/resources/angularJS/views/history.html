@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ideamart history </title>
+
+    <h1 > History and Revert Panel</h1>
+</head>
+
+<div ng-controller="history" >
+
+    <div class="row">
+        <div class="col-md-4">
+            Enter Job Number Here <input id="filterNum" ng-model="filterNumber" type="number" class="form-control" name="filterNum"><br />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-1">
+
+            <!--<button type="submit" data-ng-click="jobfilter()" class="btn btn-blue">View Jobs</button>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-1">-->
+
+            <button type="submit" data-ng-click="jobdetails()" class="btn btn-blue">Job Search</button>
+
+        </div>
+
+        <div class="col-md-1">
+
+            <button type="submit" data-ng-click="sphistory()" class="btn btn-blue">SP History</button>
+
+        </div>
+
+
+
+
+    <table  ng-table="jobTable" ng-modal ="jobTable"  class="table table-striped" ng-show="jobTableFiltered">
+        <tr ng-repeat="user in filteredJobs">
+            &nbsp;&nbsp;&nbsp;
+            <td><input type="checkbox" ng-model="use"/>    &nbsp; &nbsp; &nbsp;  </td>
+            <td data-title="'ID'" >
+                &nbsp;&nbsp;  {{user.job_ID}}
+            </td>
+
+            <td data-title="'TIME'" >
+                &nbsp;&nbsp; {{user.timestamp}}
+            </td>
+            <td data-title="'DESCRIPTION'" >
+                &nbsp;&nbsp;  {{user.description}}
+            </td>
+
+        </tr>
+
+    </table>
+
+
+        <table  ng-table="jobResult" ng-modal ="jobResult"  class="table table-striped" ng-show="jobResult">
+            <tr ng-repeat="job in jobSearch">
+                &nbsp;&nbsp;&nbsp;
+                <td><input type="checkbox" ng-model="use"/>    &nbsp; &nbsp; &nbsp;  </td>
+
+                <td data-title="'Job ID'" >
+                    &nbsp;&nbsp;  {{job.job_ID}}
+                </td>
+
+                <td data-title="'SP ID'" >
+                    &nbsp;&nbsp;  {{job.sp_ID}}
+                </td>
+                <td data-title="'Date and Time'" >
+                    &nbsp;&nbsp;  {{job.timestamp}}
+                </td>
+                <td data-title="'DESCRIPTION'" >
+                    &nbsp;&nbsp; {{job.description}}
+                </td>
+
+                <td data-title="'AMOUNT'" >
+                    &nbsp;&nbsp;  {{job.amount}}
+                </td>
+
+
+
+
+            </tr>
+
+        </table>
+</div>
+
+</div>
+    </div>
+
+
+</body>
+</html>

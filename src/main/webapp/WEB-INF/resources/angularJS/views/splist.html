@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+<div>
+
+
+
+
+<br><br>
+
+<div ng-controller="FilterController" >
+    <div class="row">
+        <div class="col-md-4">
+            Filter Accounts Greater Than: <input id="filterNum" ng-model="filterNumber" type="number" class="form-control" name="filterNum"><br />
+
+        </div>
+
+    </div>
+
+
+    <!--<script type="application/javascript">-->
+
+        <!--function tableToJson(table){-->
+
+            <!--var data = [];-->
+            <!--var headers = [];-->
+            <!--for (var i=0; i<table.rows[0].cells.length; i++){-->
+                <!--headers[i] = table.rows[0].cells[i].innerHTML.toLowerCas().replace(/ /gi,'');-->
+            <!--}-->
+            <!--data.push(headers);-->
+
+            <!--for (var j=0; j<tableRow.cells.length; j++){-->
+
+                <!--rowData[headers [j]] = tableRow.cells[j].innerHTML;-->
+            <!--}-->
+            <!--data.push(rowData);-->
+        <!--}-->
+
+    <!--</script>-->
+
+<div class="row">
+
+    <div class="col-md-1">
+
+        <button type="submit" data-ng-click="filter()" class="btn btn-blue">Filter</button>
+        </div>
+
+    <div class="col-md-1">
+
+        <button type="submit" data-ng-click="credit()" class="btn btn-blue">Credit</button>
+
+    </div>
+
+    <div class="col-md-1">
+
+    <button type="submit" data-ng-click="pdf()" class="btn btn-blue">CSV Report</button>
+
+</div>
+
+
+
+
+
+
+    <!--<div class="=col-md-1">-->
+
+        <!--<button ng-click="pdftest()" type="button" class="btn btn-primary">Print PDF</button>-->
+
+        <!--</div>-->
+
+
+
+
+
+</div>
+
+    <table id="tab" ng-table="usersTable" ng-modal ="usersTable"  class="table table-striped" ng-show="showTableFiltered">
+        <tr ng-repeat="user in filteredUsers">
+            <td><input type="checkbox" ng-model="use"/>    &nbsp;  </td>
+
+
+            <td data-title="'Service Provider Id'" >
+                {{user.id}}
+            </td>
+            <td data-title="'Service Provider Name'" >
+                {{user.username}}
+            </td>
+
+
+            <td data-title="'Account number'" >
+            {{user.account_number}}
+        </td>
+
+            <td data-title="'Bank'" >
+                {{user.bank}}
+            </td>
+            <td data-title="'Bank Code'" >
+                {{user.bank_code}}
+            </td>
+            <td data-title="'Brach Code'" >
+                {{user.branch_code}}
+            </td>
+
+            <td data-title="'Current Balance'" >
+                {{user.current_balance}}
+            </td>
+
+
+        </tr>
+
+
+    <!--<button onclick="doCsv()">-->
+        <!--Download To CSV-->
+    <!--</button>-->
+
+ <!--<script>-->
+
+
+     <!--function doCsv(){-->
+         <!--debugger;-->
+
+        <!--var table = document.getElementById(user).innerHTML;-->
+         <!--var data = table.replace(/<thead>/g,'')-->
+                 <!--.replace(/<\/thead>/g,'')-->
+                 <!--.replace(/<tbody>/g,'')-->
+                 <!--.replace(/<\/tbody>/g,'')-->
+                 <!--.replace(/<tbody>/g,'')-->
+                 <!--.replace(/<tr>/g,'')-->
+                 <!--.replace(/<\/tr>/g,'')-->
+                 <!--.replace(/<th>/g,'')-->
+                 <!--.replace(/<\/th>/g,'')-->
+                 <!--.replace(/<td>/g,'')-->
+                 <!--.replace(/<\/td>/g,'')-->
+                 <!--.replace(/\t/g,'')-->
+                 <!--.replace(/\n/g,'')-->
+
+        <!--// alert((table));-->
+         <!--var myLink = document.createElement('a');-->
+         <!--myLink.download = "csvname.csv";-->
+         <!--myLink.href ="data:application/csv," + escape(data);-->
+         <!--myLink.click();-->
+
+     <!--}-->
+
+
+ <!--</script>-->
+    </table>
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+ </body>
+</html>

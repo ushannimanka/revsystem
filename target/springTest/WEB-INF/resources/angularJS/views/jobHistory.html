@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Job History</title>
+</head>
+
+ <div ng-controller="jobHistory" >
+
+     <div class="row">
+
+         <div class="col-md-1">
+
+             <button type="submit" data-ng-click="jobhistory()" class="btn btn-blue">View Jobs</button>
+         </div>
+
+     </div>
+
+     <table  ng-table="jobTable" ng-modal ="jobTable"  class="table table-striped" ng-show="jobTableFiltered">
+         <tr ng-repeat="user in filteredJobs">
+
+             &nbsp;&nbsp;&nbsp;
+             <td><input type="checkbox" ng-model="use"/>    &nbsp; &nbsp; &nbsp;  </td>
+             <td data-title="'ID'" >
+                 &nbsp;&nbsp;  {{user.job_ID}}
+             </td>
+
+             <td data-title="'TIME'" >
+                 &nbsp;&nbsp; {{user.timestamp}}
+             </td>
+             <td data-title="'DESCRIPTION'" >
+                 &nbsp;&nbsp;  {{user.description}}
+             </td>
+
+         </tr>
+
+     </table>
+
+
+ </div>
+<body>
+
+</body>
+</html>
